@@ -33,7 +33,7 @@ public class ToyShopApp {
                     String material = scanner.nextLine();
 
                     Bear bear = new Bear(name, price, material);  //tworzę obiekt Miś
-                    toyShop.addBear(bear);
+                    toyShop.addToy(bear);  //tu działa polimorfizm
 
                     break;
 
@@ -49,7 +49,7 @@ public class ToyShopApp {
                     String type = scanner.nextLine();
 
                     Car car = new Car(name, price, type);  //tworzę obiekt Car
-                    toyShop.addCar(car);
+                    toyShop.addToy(car); //polimorfizm
 
                     break;
                 case 3:

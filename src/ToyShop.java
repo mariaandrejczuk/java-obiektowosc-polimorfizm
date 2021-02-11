@@ -11,21 +11,27 @@ public class ToyShop {  //miejsce do przechowywania wszystkich zabawek
     private int indexToy = 0;
 
 
-    public void addBear(Bear bear) {
-        if (indexToy < toys.length) {    //mogę zastąpić misia toysem, czyli przypiac misia do zabawek, bo miś jest klasą pochodnę do klasy toys
-            toys[indexToy++] = bear;
-        }
-    }
+    //public void addBear(Bear bear) {
+    //    if (indexToy < toys.length) {    //mogę zastąpić misia toysem, czyli przypiac misia do zabawek, bo miś jest klasą pochodnę do klasy toys
+    //        toys[indexToy++] = bear;
+    //    }
+    //}
 
-    public void addCar(Car car) {
+    //public void addCar(Car car) {
+    //    if (indexToy < toys.length) {
+    //        toys[indexToy++] = car;
+    //    }
+    //}
+
+    public void addToy(Toy toy) {  //zmienna klasy bazowej może przechowywać referencje do obiektu klasy pochodnej
         if (indexToy < toys.length) {
-            toys[indexToy++] = car;
+            toys[indexToy++] = toy;
         }
     }
 
-    public void displayAll() {
-        for (int i = 0; i < indexToy; i++) {
-            toys[i].display();
+    public void displayAll() {   //typowy polimorfizm dynamiczny zaczyna się w momencie wyświetlania - wyświetlam toy ale tak naprawdę są to misie i samochody, przy wprowadzeiu okazuje się, jaki obiekt mamy i jaki będzie wyswietlony - czy car, czy bear
+        for (int i = 0; i < indexToy; i++) {   //polimorfizm z wykorzystaniem dziedziczenia i przesłanianie -->polimorfizm dynamiczny)
+            toys[i].display();  //
             System.out.println();
         }
         //for (int i = 0; i < indexBear; i++) {
