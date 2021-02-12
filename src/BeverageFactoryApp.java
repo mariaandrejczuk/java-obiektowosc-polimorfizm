@@ -5,9 +5,12 @@ public class BeverageFactoryApp {
 
         Scanner scanner = new Scanner(System.in, "UTF-8");
         int option;
-        String name;
+        String typeOfBeverage;
         int volume;
         String ingredients;
+        double alcoholContent;
+        String waterType;
+        BeverageFactory beverageFactory = new BeverageFactory();
 
         do {
             System.out.println("------------ Beverage Factory ------------");
@@ -21,8 +24,8 @@ public class BeverageFactoryApp {
 
             switch (option) {
                 case 1:
-                    System.out.println("Name: ");
-                    name = scanner.nextLine();
+                    System.out.println("Type of beverage: ");
+                    typeOfBeverage = scanner.nextLine();
 
                     System.out.println("Volume: ");
                     volume = scanner.nextInt();
@@ -34,21 +37,40 @@ public class BeverageFactoryApp {
 
                     System.out.println("Alcohol content in %: ");
                     alcoholContent = scanner.nextDouble();
+                    scanner.nextLine();
 
-                    Beer beer = new Beer(name, volume, ingredients, alcoholContent);
+                    Beer beer = new Beer(typeOfBeverage, volume, ingredients, alcoholContent);
 
                     beverageFactory.addBeverage(beer);  //dodaję piwo do napojów ogółem, do obiektu fabryka napojów
 
                     break;
                 case 2:
+                    System.out.println("Type of beverage: ");
+                    typeOfBeverage = scanner.nextLine();
+
+                    System.out.println("Volume: ");
+                    volume = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Ingredients: ");
+                    ingredients = scanner.nextLine();
+                    scanner.nextLine();
+
+                    System.out.println("Type of water: ");
+                    waterType = scanner.nextLine();
+
+                    Water water = new Water(typeOfBeverage, volume, ingredients, waterType);
+
+                    beverageFactory.addBeverage(water);  //dodaję wodę do napojów ogółem, do obiektu fabryka napojów
+
                     break;
+
                 case 3:
+                    beverageFactory.displayAll();
                     break;
-
             }
-
-
         } while (option != 0);
+
         scanner.close();
     }
 }
