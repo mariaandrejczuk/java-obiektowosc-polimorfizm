@@ -33,7 +33,6 @@ public class BeverageFactoryApp {
 
                     System.out.println("Ingredients: ");
                     ingredients = scanner.nextLine();
-                    scanner.nextLine();
 
                     System.out.println("Alcohol content in %: ");
                     alcoholContent = scanner.nextDouble();
@@ -54,7 +53,6 @@ public class BeverageFactoryApp {
 
                     System.out.println("Ingredients: ");
                     ingredients = scanner.nextLine();
-                    scanner.nextLine();
 
                     System.out.println("Type of water: ");
                     waterType = scanner.nextLine();
