@@ -1,6 +1,6 @@
 
 public class BeverageFactory {
-    private Beverage[] beverages = new Beverage[20];  //ta tablica zastąpi dwie powyżze cars i bears
+    private Beverage[] beverages = new Beverage[20]; 
     private int indexBeverage = 0;
 
     public void addBeverage(Beverage beverage) {
